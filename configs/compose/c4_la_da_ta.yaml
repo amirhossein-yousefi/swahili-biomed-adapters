@@ -1,0 +1,6 @@
+id: C4
+description: Stack(LA_swh, DA_eng, TA)  - primary MAD-X analog
+adapters:
+  LA_swh: ${ckpt_dir}/la_swh
+  DA_eng: ${ckpt_dir}/da_eng_bio_on_base
+  TA:     ${ckpt_dir}/ta_mcqa/seed${run.seed}/TA

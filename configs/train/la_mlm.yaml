@@ -1,0 +1,35 @@
+# §5.2 hyperparameters for the Swahili LA MLM training
+defaults:
+  - /backbone: afroxlmr_large
+  - /adapter: pfeiffer_rf16_inv
+  - /data: la_swh
+  - _self_
+
+# Adapter to train. Default LA_swh for Swahili; override with
+# `train.adapter_name=LA_en` (no `+` needed) when training the source-language
+# adapter for the MAD-X recipe (see §7.3 in JOURNAL.md). The stable_output_dir
+# below depends on adapter_name via train_la.py's default:
+#   ${ckpt_dir}/${adapter_name.lower()}_run
+# so override stable_output_dir explicitly only if you need a non-standard path.
+adapter_name: LA_swh
+
+seq_len: 512
+num_epochs: 3.0
+max_steps: -1
+batch_size: 16
+grad_accum: 4
+lr: 1.0e-4
+warmup_steps: 2000
+weight_decay: 0.01
+max_grad_norm: 1.0
+save_steps: 1000               # crash-resilient: lose at most ~17 min on power-off
+eval_steps: 1000               # match save cadence so load_best_model_at_end works
+span_mask: false
+
+# Stable output dir lets the trainer auto-resume from the latest checkpoint
+# across crashes / reboots — see scripts/run_with_watchdog.py for the
+# supervisor pattern. JOURNAL.md §11 documents the two crashes that motivated this.
+# Defaults to ${ckpt_dir}/${adapter_name.lower()}_run via train_la.py (so for
+# adapter_name=LA_swh → checkpoints/la_swh_run/, LA_en → checkpoints/la_en_run/).
+# Override here only if you need a non-standard path.
+resume: true

@@ -1,0 +1,16 @@
+defaults:
+  - /backbone: afroxlmr_large
+  - /adapter: lora_baseline
+  - _self_
+
+# §5.6 (g): single LoRA fine-tuned on union(swh raw, en biomed raw)
+data:
+  swh_max_per_source: 100000
+  bio_max_abstracts: 200000
+
+train:
+  seq_len: 512
+  num_epochs: 2.0
+  batch_size: 16
+  grad_accum: 4
+  lr: 1.0e-4

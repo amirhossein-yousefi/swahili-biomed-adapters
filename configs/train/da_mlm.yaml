@@ -1,0 +1,25 @@
+# §5.3 hyperparameters for the English biomedical DA MLM training
+defaults:
+  - /backbone: afroxlmr_large
+  - /adapter: pfeiffer_rf16
+  - /data: da_eng_bio
+  - _self_
+
+mode: on_base                # 'on_base' | 'on_la'
+la_en_path: null             # required when mode=on_la
+
+seq_len: 512
+num_epochs: 3.0
+max_steps: -1
+batch_size: 16
+grad_accum: 4
+lr: 1.0e-4
+warmup_steps: 2000
+weight_decay: 0.01
+save_steps: 1000               # crash-resilient: lose at most ~17 min on power-off
+eval_steps: 1000               # match save cadence so load_best_model_at_end works
+
+# Stable output dir lets the trainer auto-resume from the latest checkpoint
+# across crashes / reboots — see scripts/run_with_watchdog.py and JOURNAL.md §11.
+stable_output_dir: ${ckpt_dir}/da_eng_bio_${train.mode}_run
+resume: true

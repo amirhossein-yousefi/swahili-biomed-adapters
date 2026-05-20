@@ -1,0 +1,6 @@
+# LA training data-volume curve: estimate data-efficiency
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      data.max_docs_per_source: 20000,100000,200000,300000,600000

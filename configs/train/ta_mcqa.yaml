@@ -1,0 +1,16 @@
+defaults:
+  - /backbone: afroxlmr_large
+  - /adapter: pfeiffer_rf16
+  - /data: ta_mcqa
+  - _self_
+
+task_type: mcqa
+num_choices: 4
+la_path: ${ckpt_dir}/la_swh
+da_path: ${ckpt_dir}/da_eng_bio_on_base
+num_epochs: 5.0
+batch_size: 8
+grad_accum: 2
+lr: 1.0e-4
+max_length: 256
+eval_swh: true

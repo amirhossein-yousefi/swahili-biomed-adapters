@@ -1,0 +1,7 @@
+defaults:
+  - /backbone: afroxlmr_large
+  - /compose: c4_la_da_ta
+  - _self_
+
+data_path: data/processed/medlineplus_swh.jsonl
+batch_size: 16

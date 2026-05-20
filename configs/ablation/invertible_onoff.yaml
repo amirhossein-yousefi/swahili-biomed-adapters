@@ -1,0 +1,6 @@
+# Toggle invertible NICE adapter on the embedding layer for the LA
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      adapter: pfeiffer_rf16,pfeiffer_rf16_inv

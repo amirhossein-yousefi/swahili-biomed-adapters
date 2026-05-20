@@ -1,0 +1,5 @@
+id: C10
+description: Hyper-X hypernetwork generates LA, DA on demand (optional)
+adapters:
+  HyperX: ${ckpt_dir}/hyperx
+  TA:     ${ckpt_dir}/ta_mcqa/seed${run.seed}/TA

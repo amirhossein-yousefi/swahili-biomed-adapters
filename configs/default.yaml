@@ -1,0 +1,27 @@
+defaults:
+  - backbone: afroxlmr_large
+  - adapter: pfeiffer_rf16
+  - data: la_swh
+  - train: la_mlm
+  - compose: c4_la_da_ta
+  - eval: mcqa
+  - _self_
+
+run:
+  output_dir: ${oc.env:RESULTS_DIR,./results}/runs/${now:%Y-%m-%d_%H-%M-%S}
+  seed: 42
+  bf16: true
+  flash_attn: true
+  wandb:
+    enabled: false
+    project: swa-med-adapters
+
+# Conventional environment-driven roots; can be overridden on the CLI
+data_dir:  ${oc.env:DATA_DIR,./data/processed}
+ckpt_dir:  ${oc.env:CKPT_DIR,./checkpoints}
+
+hydra:
+  run:
+    dir: ${run.output_dir}
+  job:
+    chdir: false

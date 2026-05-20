@@ -1,0 +1,6 @@
+# §5.3 mode (a) on top of LA_en vs (b) on base directly
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      train.mode: on_base,on_la

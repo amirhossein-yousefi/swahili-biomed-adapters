@@ -1,0 +1,10 @@
+defaults:
+  - /backbone: afroxlmr_large
+  - /compose: c2_la_only
+  - _self_
+
+data_path: data/processed/openwho_swh_eval.txt
+n_sentences: 2000
+batch_size: 8
+max_length: 512
+mlm_prob: 0.15

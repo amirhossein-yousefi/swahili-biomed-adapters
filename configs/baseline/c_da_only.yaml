@@ -1,0 +1,11 @@
+defaults:
+  - /backbone: afroxlmr_large
+  - /adapter: pfeiffer_rf16
+  - /data: ta_mcqa
+  - /train: ta_mcqa
+  - _self_
+
+# §5.6 (c): DA + TA, no LA  (overlaps with C3; kept separate)
+train:
+  la_path: null
+  da_path: ${ckpt_dir}/da_eng_bio_on_base

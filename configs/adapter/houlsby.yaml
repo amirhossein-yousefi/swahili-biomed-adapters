@@ -1,0 +1,4 @@
+type: houlsby
+reduction_factor: 16
+non_linearity: gelu
+invertible: false

@@ -1,0 +1,5 @@
+id: C8
+description: Stack(LA_DA_joint, TA)  - BAD-X-style joint LA+DA
+adapters:
+  LA_DA_joint: ${ckpt_dir}/la_da_joint
+  TA:          ${ckpt_dir}/ta_mcqa/seed${run.seed}/TA

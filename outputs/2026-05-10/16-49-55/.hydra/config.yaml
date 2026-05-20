@@ -1,0 +1,32 @@
+train:
+  backbone:
+    name: Davlan/afro-xlmr-large
+    hidden_size: 1024
+    freeze_base: true
+  adapter:
+    type: pfeiffer
+    reduction_factor: 16
+    non_linearity: gelu
+    invertible: true
+    inv_reduction_factor: 2
+  data:
+    lang: sw
+    max_docs_per_source: 200000
+    dedup: true
+    dedup_threshold: 0.8
+    lid_filter: true
+    lid_threshold: 0.5
+    eval_path: data/processed/openwho_swh_eval.txt
+    eval_size: 2000
+  seq_len: 512
+  num_epochs: 3.0
+  max_steps: 2000
+  batch_size: 16
+  grad_accum: 4
+  lr: 0.0001
+  warmup_steps: 2000
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  save_steps: 2000
+  eval_steps: 500
+  span_mask: false

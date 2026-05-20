@@ -1,0 +1,18 @@
+defaults:
+  - /backbone: afroxlmr_large
+  - _self_
+
+# §5.6 (d): full DAPT on Swa-Med corpus (~2 days wall-clock)
+data:
+  openwho_max: null         # use all
+  medlineplus_cache: data/raw/medlineplus
+  translated_pubmed: 50000
+  nllb_batch: 16
+
+train:
+  seq_len: 512
+  num_epochs: 3.0
+  batch_size: 16
+  grad_accum: 4
+  lr: 5.0e-5
+  warmup_steps: 1000

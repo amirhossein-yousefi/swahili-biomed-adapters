@@ -1,0 +1,5 @@
+id: C2
+description: LA_swh only (+ TA)
+adapters:
+  LA_swh: ${ckpt_dir}/la_swh
+  TA:     ${ckpt_dir}/ta_mcqa/seed${run.seed}/TA

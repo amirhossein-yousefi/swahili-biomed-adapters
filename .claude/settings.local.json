@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c 'import ast, sys; failed=[] *)",
+      "Bash(python3 -c ' *)",
+      "Bash(uv --version)",
+      "Bash(command -v uv)",
+      "Bash(pip3 show *)",
+      "Bash(pip3 install *)"
+    ]
+  }
+}

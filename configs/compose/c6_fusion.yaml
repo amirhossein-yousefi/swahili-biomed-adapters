@@ -1,0 +1,7 @@
+id: C6
+description: Stack(Fuse(LA_swh, DA_eng), TA)  - AdapterFusion
+fusion_ckpt: null   # set to /path/to/saved_fusion if available
+adapters:
+  LA_swh: ${ckpt_dir}/la_swh
+  DA_eng: ${ckpt_dir}/da_eng_bio_on_base
+  TA:     ${ckpt_dir}/ta_mcqa/seed${run.seed}/TA

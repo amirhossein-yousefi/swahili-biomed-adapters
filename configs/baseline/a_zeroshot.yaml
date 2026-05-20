@@ -1,0 +1,11 @@
+defaults:
+  - /backbone: afroxlmr_large
+  - /adapter: pfeiffer_rf16
+  - /data: ta_mcqa
+  - /train: ta_mcqa
+  - _self_
+
+# §5.6 (a): TA only, no LA / DA
+train:
+  la_path: null
+  da_path: null

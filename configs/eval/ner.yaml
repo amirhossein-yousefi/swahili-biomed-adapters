@@ -1,0 +1,10 @@
+defaults:
+  - /backbone: afroxlmr_large
+  - /compose: c4_la_da_ta
+  - _self_
+
+data_path: data/processed/bc5cdr_swh_test.jsonl
+batch_size: 16
+max_length: 256
+clinician_validated_subset: null     # path to a JSON list of validated indices (§9 non-negotiable)
+compare_to: null

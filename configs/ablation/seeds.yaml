@@ -1,0 +1,6 @@
+# 3 seeds per §5.7 (mean ± std + significance)
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      run.seed: 42,7,123

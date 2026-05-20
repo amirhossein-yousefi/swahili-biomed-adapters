@@ -1,0 +1,10 @@
+defaults:
+  - /backbone: afroxlmr_large
+  - /compose: c4_la_da_ta
+  - _self_
+
+split: test
+batch_size: 8
+max_length: 256
+num_choices: 4
+compare_to: null            # path to a previous predictions.jsonl for paired bootstrap

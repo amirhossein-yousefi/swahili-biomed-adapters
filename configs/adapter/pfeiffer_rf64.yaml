@@ -1,0 +1,5 @@
+type: pfeiffer
+reduction_factor: 64
+non_linearity: gelu
+invertible: false
+inv_reduction_factor: 2

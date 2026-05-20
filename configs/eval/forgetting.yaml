@@ -1,0 +1,9 @@
+defaults:
+  - /backbone: afroxlmr_large
+  - /adapter: pfeiffer_rf16
+  - _self_
+
+# §8 catastrophic-forgetting probe on MasakhaNER-Swahili
+la_path: ${ckpt_dir}/la_swh
+da_path: ${ckpt_dir}/da_eng_bio_on_base
+num_epochs: 3.0

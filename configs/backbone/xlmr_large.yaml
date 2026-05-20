@@ -1,0 +1,3 @@
+name: xlm-roberta-large
+hidden_size: 1024
+freeze_base: true

@@ -1,0 +1,7 @@
+defaults:
+  - /backbone: afroxlmr_large
+  - _self_
+
+# §5.6 (f): NLLB translates Swahili test → English at inference; English bio model scores.
+mode: test
+nllb_model: facebook/nllb-200-3.3B

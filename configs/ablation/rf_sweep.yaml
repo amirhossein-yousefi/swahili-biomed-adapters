@@ -1,0 +1,6 @@
+# Run as: python scripts/train_la.py -m +ablation=rf_sweep
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      adapter: pfeiffer_rf4,pfeiffer_rf8,pfeiffer_rf16,pfeiffer_rf32,pfeiffer_rf64

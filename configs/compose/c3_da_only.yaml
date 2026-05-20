@@ -1,0 +1,5 @@
+id: C3
+description: DA_eng only (+ TA)
+adapters:
+  DA_eng: ${ckpt_dir}/da_eng_bio_on_base
+  TA:     ${ckpt_dir}/ta_mcqa/seed${run.seed}/TA
